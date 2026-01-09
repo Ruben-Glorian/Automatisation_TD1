@@ -2,21 +2,13 @@ services:
   app:
     container_name: client_vue
     build:
-      context: .
       dockerfile: docker/php/Dockerfile
     ports:
-      - "80:80"
-    # volumes:
-    #   - ./:/app
-    working_dir: /app
-    command: http-server dist -p 80
-    restart: unless-stopped
-
-  web:
-    container_name: immo-client-vue
-    image: nginx:1.25
-    ports:
-      - "12345:80"
+      - "3000:3000"
     volumes:
-      - ./immo-client-vue.web:/usr/share/nginx/html:ro
-    restart: unless-stopped
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm run dev --host && npm install
+    environment:
+      - CHOKIDAR_USEPOLLING=true
