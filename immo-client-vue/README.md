@@ -19,6 +19,7 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 
 ## Installation
 - Se placer dans le dossier racine (immo-client-vue)
+- CREER un fichier .env à la racine du projet en se basant sur le fichier .env.exemple
 - Utiliser la commande 'docker compose run --rm app npm install'
 - Utiliser la commande 'docker compose run --rm app npm update'(si besoin)
 - Lancer la commande docker compose up'

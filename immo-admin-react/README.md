@@ -9,6 +9,7 @@ Currently, two official plugins are available:
 
 
 # Installation
+- CREER un fichier .env à la racine du projet en se basant sur le fichier .env.exemple
 - ouvrir docker
 - dans le terminal de docker, aller à la racine du projet (dossier "immo-admin-react")
 - lancer `docker compose up`
