@@ -10,6 +10,5 @@ Simple API using Slim v4 MySQL
 
 ## Installation
 - Se placer dans la racine du projet (immo-api-php)
-- Lancer `docker compose up --build`
-- Sinon `docker compose up` si l'image est déjà build
+- Lancer `docker compose up`
 - http://localhost:8081/ pour l'API
