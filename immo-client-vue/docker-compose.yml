@@ -9,6 +9,6 @@ services:
       - .:/app
       - /app/node_modules
     working_dir: /app
-    command: npm run dev --host && npm install
+    command: npm run dev && npm install
     environment:
       - CHOKIDAR_USEPOLLING=true
