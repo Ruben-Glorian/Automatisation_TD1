@@ -1,0 +1,32 @@
+#plus forcément besoin de le préciser
+networks:
+  app.net:
+    driver: bridge
+
+services:
+#service immo-api-php : api du projet
+  immo-api-php.app:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    ports:
+      - '8081:81'
+    env_file:
+      - .env
+    volumes:
+      - .:/var/php
+    working_dir: /var/php
+    networks:
+      - app.net
+    command: sh -c "composer install && php -S 0.0.0.0:81 -t /var/php/public"
+
+#services des BDs MariaDB
+  immo-api-php.db:
+    image: 'mariadb:latest'
+    env_file: .env
+    ports:
+        - '3306:3306'
+    networks:
+      - app.net
+    volumes:
+        - ./sql:/var/sql
