@@ -1,13 +1,11 @@
 services:
   app:
     container_name: client_vue
-    build:
-      dockerfile: docker/php/Dockerfile
+    image: node:lts
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
-      - /app/node_modules
+      - ./:/app
     working_dir: /app
     command: npm run dev
     environment:
