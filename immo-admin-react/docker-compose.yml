@@ -4,4 +4,4 @@ services:
     ports:
       - "2550:2550"
     restart: unless-stopped
-    command : php -S 0.0.0.0:3000
+    command : php -S 0.0.0.0:2550
